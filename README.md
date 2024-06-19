@@ -21,4 +21,4 @@ the main questions they’d l ike to answer:
 
 ## Data
 The database used for this projects contains 15 tables which are connected to eachother over a private key and/or foreign key.
-For detailed reference over type and structure of the database please refer to the [data dictionary](docs/CONTRIBUTING.md)
+For detailed reference over type and structure of the database please refer to the [data dictionary](rockbuster_SQL/Rockbuster_Data_Dictionary.md)
