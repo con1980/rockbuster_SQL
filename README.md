@@ -1,6 +1,6 @@
 # rockbuster_SQL
 Movie rental Data Analysis.
-Answer business intelligence (BI) questions by querying Data sets with SQL, creating a data dictionary and finally visualize findings with TABLEAU.
+Answer business intelligence (BI) questions by querying Data sets with SQL, creating a data dictionary and finally present findings.
 
 ## Introduction
 Rockbuster Stealth LLC is a movie rental company that used to have stores around the
