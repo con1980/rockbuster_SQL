@@ -3,14 +3,14 @@ Movie rental Data Analysis - SQL
 Answer business intelligence (BI) questions by querying Data sets with SQL, creating a data dictionary and finally visualize findings with TABLEAU.
 
 ## Introduction
-Rockbuster Stealth LLC i s a movie rental company that used to have stores around the
+Rockbuster Stealth LLC is a movie rental company that used to have stores around the
 world. Facing stiff competition from streaming services such as Netflix and Amazon Prime,
-the Rockbuster Stealth management team i s planning to use i ts existing movie l icenses to
-launch an online video rental service i n order to stay competitive.
+the Rockbuster Stealth management team is planning to use its existing movie licenses to
+launch an online video rental service in order to stay competitive.
 
 ## Key questions and objectives
 The Rockbuster Stealth Management Board has asked a series of business questions and
-they expect data-driven answers that they can use for their 2020 company strategy. Here are
+they expect data-driven answers which they can use for their 2020 company strategy. Here are
 the main questions they’d l ike to answer:
 
 - Which movies contributed the most/least to revenue gain?
