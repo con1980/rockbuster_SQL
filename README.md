@@ -21,4 +21,12 @@ the main questions they’d l ike to answer:
 
 ## Data
 The database used for this projects contains 15 tables which are connected to eachother over a private key and/or foreign key.
-For detailed reference over type and structure of the database please refer to the [data dictionary](</Rockbuster Data Dictionary.pdf>)
+For detailed reference over type and structure of the database please refer to the [data dictionary](</Rockbuster Data Dictionary.pdf>).
+The data set contains information of Rockbuster's inventory, customers, payments, countries, stores, staff, movies etc.
+[Rockbuster data set](</dvdrental.zip>)
+
+## Tools
+For this project the following tools were used
+- PostgreSQL
+- Tableau
+
