@@ -1,5 +1,5 @@
 # rockbuster_SQL
-Movie rental Data Analysis.
+Movie rental Data Analysis.<br />
 Answer business intelligence (BI) questions by querying Data sets with SQL, creating a data dictionary and finally present findings.
 
 ## Introduction
@@ -30,5 +30,7 @@ For this project the following tools were used
 - PostgreSQL
 - Tableau
 
-## Visualizations
-Visualization of the answers to the business question please see here [Tableau visualisations](https://public.tableau.com/app/profile/constantin.melachrinos/viz/Rockbuster_17157995150910/Customerscountry?publish=yes)
+## Final presentation
+Final presentation please see here [Rockbuster Data Analysis](</Rockbuster Data Analysis.pdf>)<br />
+Visualizations made with Tableau please see here [Tableau visualisations](https://public.tableau.com/app/profile/constantin.melachrinos/viz/Rockbuster_17157995150910/Customerscountry?publish=yes)
+
