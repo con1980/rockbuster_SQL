@@ -30,3 +30,5 @@ For this project the following tools were used
 - PostgreSQL
 - Tableau
 
+## Visualizations
+Visualization of the answers to the business question please see here [Tableau visualisations](https://public.tableau.com/app/profile/constantin.melachrinos/viz/Rockbuster_17157995150910/Customerscountry?publish=yes)
