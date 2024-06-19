@@ -1,5 +1,5 @@
 # rockbuster_SQL
-Movie rental Data Analysis - SQL
+Movie rental Data Analysis.
 Answer business intelligence (BI) questions by querying Data sets with SQL, creating a data dictionary and finally visualize findings with TABLEAU.
 
 ## Introduction
