@@ -171,11 +171,11 @@ ORDER BY total_payment DESC
 Top 5 customers of the TOP 10 countries
 ```SQL
 SELECT 	B.customer_id,
-		B.first_name,
-		B.last_name,
-		D.city,
-		E.country,
-		SUM(A.amount) as total_amount_paid
+	B.first_name,
+	B.last_name,
+	D.city,
+	E.country,
+	SUM(A.amount) as total_amount_paid
 FROM payment A
 INNER JOIN customer B ON A.customer_id = B.customer_id
 INNER JOIN address C ON B.address_id = C.address_id
@@ -183,32 +183,32 @@ INNER JOIN city D ON C.city_id =D.city_id
 INNER JOIN country E ON D.country_id = E.country_id
 
 WHERE D.city IN ( 	Select D.city
-					FROM customer B
-					INNER JOIN address C ON B.address_id = C.address_id
-					INNER JOIN city D ON C.city_id =D.city_id
-					INNER JOIN country E ON D.country_id = E.country_id
-					WHERE E.country IN ( 	SELECT E.country
-											FROM customer B
-											INNER JOIN address C ON B.address_id = C.address_id
-											INNER JOIN city D ON C.city_id =D.city_id
-											INNER JOIN country E ON D.country_id = E.country_id
-											GROUP BY country
-											ORDER BY COUNT(customer_id) DESC
-											LIMIT 10
-										)
+			FROM customer B
+			INNER JOIN address C ON B.address_id = C.address_id
+			INNER JOIN city D ON C.city_id =D.city_id
+			INNER JOIN country E ON D.country_id = E.country_id
+			WHERE E.country IN ( 	SELECT E.country
+						FROM customer B
+						INNER JOIN address C ON B.address_id = C.address_id
+						INNER JOIN city D ON C.city_id =D.city_id
+						INNER JOIN country E ON D.country_id = E.country_id
+						GROUP BY country
+						ORDER BY COUNT(customer_id) DESC
+						LIMIT 10
+						)
 					GROUP BY country, city
 					ORDER BY COUNT(customer_id) DESC
 					LIMIT 10
-					)
+		)
 Group by 	B.customer_id,
-			B.first_name,
-			B.last_name,
-			D.city,
-			E.country
+		B.first_name,
+		B.last_name,
+		D.city,
+		E.country
 ORDER BY total_amount_paid DESC
 LIMIT 5
 ```
-
+[Top 5 customers of top 10 countries](</06 Screenshots/top5_customers_of_top10_countries.png>)</br >
 
 
 
@@ -216,6 +216,6 @@ LIMIT 5
 
 
 ## Final presentation
-Final presentation please see here [Rockbuster Data Analysis](</Rockbuster Data Analysis.pdf>)<br />
+Final presentation please see here [Rockbuster Data Analysis](</Rockbuster Data Analysis.pdf>)</br >
 Visualizations made with Tableau please see here [Tableau visualisations](https://public.tableau.com/app/profile/constantin.melachrinos/viz/Rockbuster_17157995150910/Customerscountry?publish=yes)
 
