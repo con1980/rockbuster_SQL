@@ -47,7 +47,7 @@ To prepare the data properly for visualization we need to follow the following s
 ## Cleaning and summarizing
 
 ### Find duplicated data in "film" table
-```SQL
+```POSTGRESQL
 SELECT film_id,
 		title,
 		description,
