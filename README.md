@@ -89,7 +89,8 @@ Where (customer_id,
 No missing data was found.
 
 ## Extract data to answer business questions
-### Descriptive Analysis
+## Descriptive Analysis
+
 First extract some key data for the final presentation to give the audience a feel of the data set and what it holds.
 Extract the following:
 * Count of all available movies
@@ -254,8 +255,54 @@ LIMIT 5) AS total_amount_paid
 ```
 The average amoint paid by the TOP 5 customers is 105.55
 
+### CTE examples
+
 Find out how many of the top 5 customers are based within of the TOP 10 countries
 ```SQL
+WITH 
+top_10_country (country) AS
+	(SELECT E.country
+	FROM customer B
+	INNER JOIN address C ON B.address_id = C.address_id
+	INNER JOIN city D ON C.city_id =D.city_id
+	INNER JOIN country E ON D.country_id = E.country_id
+	GROUP BY country
+	ORDER BY COUNT(customer_id) DESC
+	LIMIT 10),
+						
+top_10_cities_and_countries (city) AS
+	(Select D.city
+	FROM customer B
+	INNER JOIN address C ON B.address_id = C.address_id
+	INNER JOIN city D ON C.city_id =D.city_id
+	INNER JOIN country E ON D.country_id = E.country_id
+	WHERE E.country IN (SELECT * FROM top_10_country)
+	GROUP BY country, city
+	ORDER BY COUNT(customer_id) DESC
+	LIMIT 10),
+				
+total_amount_payment AS
+	(SELECT B.customer_id,
+		B.first_name,
+		B.last_name,
+		D.city,
+		E.country,
+		SUM(A.amount) as total_amount_paid
+		FROM payment A
+		INNER JOIN customer B ON A.customer_id = B.customer_id
+		INNER JOIN address C ON B.address_id = C.address_id
+		INNER JOIN city D ON C.city_id =D.city_id
+		INNER JOIN country E ON D.country_id = E.country_id
+
+		WHERE D.city IN (SELECT * FROM top_10_cities_and_countries)
+	Group by	B.customer_id,
+			B.first_name,
+			B.last_name,
+			D.city,
+			E.country
+	ORDER BY total_amount_paid DESC
+	LIMIT 5)
+
 SELECT	E.country,
 	COUNT(DISTINCT B.customer_id) AS all_customer_count,
 	COUNT(DISTINCT top_5_customers) AS top_customer_count
@@ -263,47 +310,9 @@ FROM customer B
 JOIN address C ON B.address_id = C.address_id
 JOIN city D ON C.city_id =D.city_id
 JOIN country E ON D.country_id = E.country_id
-LEFT JOIN 
-	(SELECT	B.customer_id,
-		B.first_name,
-		B.last_name,
-		D.city,
-		E.country,
-		SUM(A.amount
-  	) as total_amount_paid
-FROM payment A
-INNER JOIN customer B ON A.customer_id = B.customer_id
-INNER JOIN address C ON B.address_id = C.address_id
-INNER JOIN city D ON C.city_id =D.city_id
-INNER JOIN country E ON D.country_id = E.country_id
-
-WHERE D.city IN (	Select D.city
-			FROM customer B
-			INNER JOIN address C ON B.address_id = C.address_id
-			INNER JOIN city D ON C.city_id =D.city_id
-			INNER JOIN country E ON D.country_id = E.country_id
-			WHERE E.country IN (	SELECT E.country
-						FROM customer B
-						INNER JOIN address C ON B.address_id = C.address_id
-						INNER JOIN city D ON C.city_id =D.city_id
-						INNER JOIN country E ON D.country_id = E.country_id
-						GROUP BY country
-						ORDER BY COUNT(customer_id) DESC
-						LIMIT 10
-				 		)
-	 		GROUP BY country, city
-			ORDER BY COUNT(customer_id) DESC
-			LIMIT 10
-		)
-Group by 	B.customer_id,
-		B.first_name,
-		B.last_name,
-		D.city,
-		E.country
-ORDER BY total_amount_paid DESC
-LIMIT 5) AS top_5_customers
-
+LEFT JOIN total_amount_payment AS top_5_customers
 ON B.customer_id = top_5_customers.customer_id
+
 GROUP BY E.country
 ORDER BY all_customer_count DESC
 LIMIT 10
