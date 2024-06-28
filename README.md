@@ -43,6 +43,53 @@ For this project the following tools were used
 # 4. Data preperation
 To prepare the data properly for visualization we need to follow the following steps: Extract, transform, load into new database (in this case it will be to export the data into csv for visualization purposes)
 
+## Cleaning and summarizing
+
+### Find duplicated data in "film" table
+```SQL
+SELECT film_id,
+		title,
+		description,
+		rating,
+		COUNT(*)
+FROM film
+GROUP BY film_id,
+		title,
+		description,
+		rating
+HAVING COUNT(*)>1
+```
+No duplicated data was found.
+
+### Find missing data
+```SQL
+SELECT customer_id,
+		store_id,
+		first_name,
+		last_name,
+		email,
+		address_id,
+		activebool,
+		create_date,
+		last_update,
+		active
+		
+FROM customer
+Where (customer_id,
+		store_id,
+		first_name,
+		last_name,
+		email,
+		address_id,
+		activebool,
+		create_date,
+		last_update,
+		active) is NULL
+```
+No missing data was found.
+
+## Extract data to answer business questions
+### Descriptive Analysis
 First extract some key data for the final presentation to give the audience a feel of the data set and what it holds.
 Extract the following:
 * Count of all available movies
@@ -81,6 +128,16 @@ SELECT
 FROM film
 ```
 
+Most common language and PG rating
+```SQL
+SELECT 	MODE() WITHIN GROUP (ORDER BY language_id) AS most_common_language_id,
+		 MODE() WITHIN GROUP (ORDER BY rating) AS most_common_rating
+
+FROM film;
+```
+Most common language_id is 1 which stands for English language. And most common rating is PG-13.
+
+### Join tables examples
 Extract data about the movies which produce the most revenue
 ```SQL
 --extract movies with the most revenue by join rental, inventory and film and sum the amount
@@ -94,20 +151,6 @@ INNER JOIN film D ON C.film_id = D.film_id
 GROUP BY title
 ORDER BY total_payment DESC
 ```
-
-Extract data about which countries the most customers come from
-```SQL
---Extract data from which country most customer come from
-SELECT 	D.country,	
-		COUNT(customer_id) as customer_countries
-FROM customer A	
-INNER JOIN address B ON A.address_id = B.address_id	
-INNER JOIN city C ON B.city_id = C.city_id	
-INNER JOIN country D ON C.country_id = D.country_id	
-	
-GROUP BY country	
-ORDER BY customer_countries DESC
-```	
 
 Where are customers with a high value based.
 ```SQL
@@ -124,6 +167,52 @@ INNER JOIN country E ON D.country_ID = E.country_ID
 GROUP BY country
 ORDER BY total_payment DESC
 ```
+
+Top 5 customers of the TOP 10 countries
+```SQL
+SELECT 	B.customer_id,
+		B.first_name,
+		B.last_name,
+		D.city,
+		E.country,
+		SUM(A.amount) as total_amount_paid
+FROM payment A
+INNER JOIN customer B ON A.customer_id = B.customer_id
+INNER JOIN address C ON B.address_id = C.address_id
+INNER JOIN city D ON C.city_id =D.city_id
+INNER JOIN country E ON D.country_id = E.country_id
+
+WHERE D.city IN ( 	Select D.city
+					FROM customer B
+					INNER JOIN address C ON B.address_id = C.address_id
+					INNER JOIN city D ON C.city_id =D.city_id
+					INNER JOIN country E ON D.country_id = E.country_id
+					WHERE E.country IN ( 	SELECT E.country
+											FROM customer B
+											INNER JOIN address C ON B.address_id = C.address_id
+											INNER JOIN city D ON C.city_id =D.city_id
+											INNER JOIN country E ON D.country_id = E.country_id
+											GROUP BY country
+											ORDER BY COUNT(customer_id) DESC
+											LIMIT 10
+										)
+					GROUP BY country, city
+					ORDER BY COUNT(customer_id) DESC
+					LIMIT 10
+					)
+Group by 	B.customer_id,
+			B.first_name,
+			B.last_name,
+			D.city,
+			E.country
+ORDER BY total_amount_paid DESC
+LIMIT 5
+```
+
+
+
+
+
 
 
 ## Final presentation
