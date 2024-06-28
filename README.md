@@ -33,9 +33,7 @@ These dimension tables are connected to sub dimension tables like "film_actor","
 For a more detailed perspective please see below the ERD (Entity Relationship Diagram) which was extracted with Postgres pgAdmin.
 ![Rockbuster ERD](</02 Data/ERD Rockbuster.png>)
 
-With the data dictionary all data types, tables and their relationship to eachother can be identified to find certain information if needed.
-
-[Rockbuster data dictionary](</05 Sent to client/Rockbuster Data Dictionary.pdf>)
+With the data dictionary all data types, tables and their relationship to eachother can be identified. [Rockbuster data dictionary](</05 Sent to client/Rockbuster Data Dictionary.pdf>)
 
 
 
