@@ -95,8 +95,35 @@ GROUP BY title
 ORDER BY total_payment DESC
 ```
 
-![image](https://github.com/con1980/rockbuster_SQL/assets/9747137/b7827334-1ff7-4edf-8b81-49a1a690e997)
+Extract data about which countries the most customers come from
+```SQL
+--Extract data from which country most customer come from
+SELECT 	D.country,	
+		COUNT(customer_id) as customer_countries
+FROM customer A	
+INNER JOIN address B ON A.address_id = B.address_id	
+INNER JOIN city C ON B.city_id = C.city_id	
+INNER JOIN country D ON C.country_id = D.country_id	
+	
+GROUP BY country	
+ORDER BY customer_countries DESC
+```	
 
+Where are customers with a high value based.
+```SQL
+--Customers with a high value from which country
+SELECT country,
+       COUNT(A.customer_id) AS customer_count,
+       SUM(amount) AS total_payment
+FROM payment A
+INNER JOIN customer B ON A.customer_id = B.customer_id
+INNER JOIN address C ON B.address_id = C.address_id
+INNER JOIN city D ON C.city_id = D.city_id
+INNER JOIN country E ON D.country_ID = E.country_ID
+
+GROUP BY country
+ORDER BY total_payment DESC
+```
 
 
 ## Final presentation
