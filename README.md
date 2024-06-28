@@ -25,7 +25,7 @@ Which movies contributed the most/least to revenue gain?
 ## Data set
 The rational database used for this project contains 15 tables which are connected to eachother over a private key and/or foreign key.
 This data set contains information about Rockbusters' film inventory, customers, payments and more.
-[Rockbuster data set](</dvdrental.zip>)
+[Rockbuster data set](</Data/dvdrental.zip>)
 
 ## Data structure
 The data structure at hand is setup as a snowflake schema. There is one fact table "payment" which has many dimension tables like "rental", "store", "customer" and "staff".
