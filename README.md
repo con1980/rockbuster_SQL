@@ -77,7 +77,7 @@ SELECT
 	MAX(replacement_cost) AS MAX_replacement_cost,
 	AVG(replacement_cost) AS AVG_replacement_cost
 	
-	FROM film
+FROM film
 ```
 
 
