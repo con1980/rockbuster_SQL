@@ -31,6 +31,7 @@ This data set contains information about Rockbuster' film inventory, customers, 
 The data structure at hand is setup as a snowflake schema. There is one fact table "payment" which has many dimension tables like "rental", "store", "customer" and "staff".
 These dimension tables are connected to sub dimension tables like "film_actor","film_category", "category" and so on.
 For a more detailed perspective please see below the ERD (Entity Relationship Diagram) which was extracted with Postgres pgAdmin.
+![Rockbuster ERD](</02 Data/ERD Rockbuster.png>)
 [Rockbuster ERD](</02 Data/ERD Rockbuster.png>)
 
 With the data dictionary all data types, tables and their relationship to eachother can be identified to find certain information if needed.
