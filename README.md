@@ -46,12 +46,39 @@ To prepare the data properly for visualization we need to follow the following s
 First extract some key data for the final presentation to give the audience a feel of the data set and what it holds.
 Extract the following:
 * Count of all available movies
-* MIN, MAX and AVERAGE of the following
-&emsp;&emsp;- year of release
-&emsp;&emsp;- Rental duration
-&emsp;&emsp;- Rental rate
-&emsp;&emsp;- Movie length in minutes
-&emsp;&emsp;- replacement costs
+* MIN, MAX and AVERAGE of the following:</br >
+&emsp;&emsp;- year of release</br >
+&emsp;&emsp;- Rental duration</br >
+&emsp;&emsp;- Rental rate</br >
+&emsp;&emsp;- Movie length in minutes</br >
+&emsp;&emsp;- replacement costs</br >
+```SQL
+SELECT
+	COUNT(film_id) AS count_of_movies,
+	MAX(film_id) AS highest_film_id,
+	
+	MIN(release_year) AS MIN_release_year,
+	MAX(release_year) AS MAX_release_year,
+	AVG(release_year) AS AVG_release_year,
+	
+	MIN(rental_duration) AS MIN_rental_duration,
+	MAX(rental_duration) AS MAX_rental_duration,
+	AVG(rental_duration) AS AVG_rental_duration,
+	
+	MIN(rental_rate) AS MIN_rental_rate,
+	MAX(rental_rate) AS MAX_rental_rate,
+	AVG(rental_rate) AS AVG_rental_rate,
+	
+	MIN(length) AS MIN_length,
+	MAX(length) AS MAX_length,
+	AVG(length) AS AVG_length,
+	
+	MIN(replacement_cost) AS MIN_replacement_cost,
+	MAX(replacement_cost) AS MAX_replacement_cost,
+	AVG(replacement_cost) AS AVG_replacement_cost
+	
+	FROM film
+```
 
 
 ## Final presentation
