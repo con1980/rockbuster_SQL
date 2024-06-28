@@ -1,8 +1,9 @@
-# rockbuster_SQL
+# 1. Introduction
 Movie rental Data Analysis.<br />
-Answer business intelligence (BI) questions by querying Data sets with SQL, creating a data dictionary and finally present findings.
+Answer business intelligence (BI) questions by cleaning and querying Data sets with PreSQL, creating a data dictionary and finally present findings.
 
-## Introduction
+
+# 2. Business understanding
 Rockbuster Stealth LLC is a movie rental company that used to have stores around the
 world. Facing stiff competition from streaming services such as Netflix and Amazon Prime,
 the Rockbuster Stealth management team is planning to use its existing movie licenses to
@@ -19,11 +20,23 @@ the main questions they’d l ike to answer:
 - Where are customers with a high lifetime value based?
 - Do sales figures vary between geographic regions?
 
-## Data
-The database used for this projects contains 15 tables which are connected to eachother over a private key and/or foreign key.
-For detailed reference over type and structure of the database please refer to the [data dictionary](</Rockbuster Data Dictionary.pdf>).
-The data set contains information of Rockbuster's inventory, customers, payments, countries, stores, staff, movies etc.
+# 3. Data understanding
+
+## Data set
+The rational database used for this projects contains 15 tables which are connected to eachother over a private key and/or foreign key.
+This data set contains information about Rockbuster' film inventory, customers, payments and more.
 [Rockbuster data set](</dvdrental.zip>)
+
+# Data structure
+The data structure at hand is setup as a snowflake schema. There is one fact table "payment" which has many dimension tables like "rental", "store", "customer" and "staff".
+These dimension tables are connected to sub dimension tables like "film_actor","film_category", "category" and so on.
+For a more detailed perspective please see below the ERD (Entity Relationship Diagram).
+[Rockbuster ERD](</
+
+
+
+For detailed reference over type and structure of the database please refer to the [data dictionary](</Rockbuster Data Dictionary.pdf>).
+
 
 ## Tools
 For this project the following tools were used
