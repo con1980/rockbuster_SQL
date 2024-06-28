@@ -326,13 +326,13 @@ LIMIT 10
 To answer the business questions at hand visualizations and explanations are presented below.
 
 ![key data overview](</06 Screenshots/key data overview.png>)
-![key data overview](</06 Screenshots/movies revenue.png>)
-![key data overview](</06 Screenshots/Top 10 countries.png>)
-![key data overview](</06 Screenshots/Geographical variation.png>)</br >
+![movies revenue](</06 Screenshots/Movies revenue.png>)
+![Top 10 countries](</06 Screenshots/Top 10 countries.png>)
+![Gegraphical variation](</06 Screenshots/Geographical variation.png>)</br >
 Visualizations made with Tableau please see here [Tableau visualisations](https://public.tableau.com/app/profile/constantin.melachrinos/viz/Rockbuster_17157995150910/Customerscountry?publish=yes)</br >
 Full presentation please see here [Rockbuster Data Analysis](</Rockbuster Data Analysis.pdf>)</br >
 
 ## 7. Conclusion and recommendations
-![key data overview](</06 Screenshots/Key findings.png>)</br >
-![key data overview](</06 Screenshots/Recommendations.png>)</br >
+![Key findings](</06 Screenshots/Key findings.png>)</br >
+![Recommendations](</06 Screenshots/Recommendations.png>)</br >
 
