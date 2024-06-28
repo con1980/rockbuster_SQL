@@ -53,6 +53,7 @@ Extract the following:
 &emsp;&emsp;- Movie length in minutes</br >
 &emsp;&emsp;- replacement costs</br >
 ```SQL
+--query MIN,MAX, AVG and count of movies
 SELECT
 	COUNT(film_id) AS count_of_movies,
 	MAX(film_id) AS highest_film_id,
@@ -79,6 +80,23 @@ SELECT
 	
 FROM film
 ```
+
+Extract data about the movies which produce the most revenue
+```SQL
+--extract movies with the most revenue by join rental, inventory and film and sum the amount
+SELECT title,
+       SUM(amount) AS total_payment
+FROM payment A
+INNER JOIN rental B ON A.rental_id = B.rental_id
+INNER JOIN inventory C ON B.inventory_id = C.inventory_id
+INNER JOIN film D ON C.film_id = D.film_id
+
+GROUP BY title
+ORDER BY total_payment DESC
+```
+
+![image](https://github.com/con1980/rockbuster_SQL/assets/9747137/b7827334-1ff7-4edf-8b81-49a1a690e997)
+
 
 
 ## Final presentation
