@@ -208,7 +208,7 @@ Group by 	B.customer_id,
 ORDER BY total_amount_paid DESC
 LIMIT 5
 ```
-[Top 5 customers of top 10 countries](</06 Screenshots/top5_customers_of_top10_countries.png>)</br >
+![Top 5 customers of top 10 countries](</06 Screenshots/top5_customers_of_top10_countries.png>)</br >
 
 
 
