@@ -330,7 +330,7 @@ To answer the business questions at hand visualizations and explanations are pre
 ![Top 10 countries](</06 Screenshots/Top 10 countries.png>)
 ![Gegraphical variation](</06 Screenshots/Geographical variation.png>)</br >
 Visualizations made with Tableau please see here [Tableau visualisations](https://public.tableau.com/app/profile/constantin.melachrinos/viz/Rockbuster_17157995150910/Customerscountry?publish=yes)</br >
-Full presentation please see here [Rockbuster Data Analysis](</Rockbuster Data Analysis.pdf>)</br >
+Full presentation please see here [Rockbuster Data Analysis](</05 Sent to client/Rockbuster Data Analysis.pdf>)</br >
 
 ## 7. Conclusion and recommendations
 ![Key findings](</06 Screenshots/Key findings.png>)</br >
