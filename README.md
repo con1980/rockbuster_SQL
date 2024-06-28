@@ -41,7 +41,7 @@ For this project the following tools were used
 * PostgreSQL
 * Tableau
 
-# 4. Data preperation
+# 4. Data preparation
 To prepare the data properly for visualization we need to follow the following steps: Extract, transform, load into new database (in this case it will be to export the data into csv for visualization purposes)
 
 ## Cleaning and summarizing
