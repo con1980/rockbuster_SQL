@@ -14,11 +14,11 @@ The Rockbuster Stealth Management Board has asked a series of business questions
 they expect data-driven answers which they can use for their 2020 company strategy. Here are
 the main questions they’d l ike to answer:
 
-- Which movies contributed the most/least to revenue gain?
-- What was the average rental duration for all videos
-- Which countries are Rockbuster customers based in?
-- Where are customers with a high lifetime value based?
-- Do sales figures vary between geographic regions?
+Which movies contributed the most/least to revenue gain?
+* What was the average rental duration for all videos
+* Which countries are Rockbuster customers based in?
+* Where are customers with a high lifetime value based?
+* Do sales figures vary between geographic regions?
 
 # 3. Data understanding
 
@@ -27,7 +27,7 @@ The rational database used for this projects contains 15 tables which are connec
 This data set contains information about Rockbuster' film inventory, customers, payments and more.
 [Rockbuster data set](</dvdrental.zip>)
 
-# Data structure
+## Data structure
 The data structure at hand is setup as a snowflake schema. There is one fact table "payment" which has many dimension tables like "rental", "store", "customer" and "staff".
 These dimension tables are connected to sub dimension tables like "film_actor","film_category", "category" and so on.
 For a more detailed perspective please see below the ERD (Entity Relationship Diagram) which was extracted with Postgres pgAdmin.
@@ -35,17 +35,24 @@ For a more detailed perspective please see below the ERD (Entity Relationship Di
 
 With the data dictionary all data types, tables and their relationship to eachother can be identified. [Rockbuster data dictionary](</05 Sent to client/Rockbuster Data Dictionary.pdf>)
 
-
-
-
-
-For detailed reference over type and structure of the database please refer to the [data dictionary](</Rockbuster Data Dictionary.pdf>).
-
-
 ## Tools
 For this project the following tools were used
-- PostgreSQL
-- Tableau
+* PostgreSQL
+* Tableau
+
+# 4. Data preperation
+To prepare the data properly for visualization we need to follow the following steps: Extract, transform, load into new database (in this case it will be to export the data into csv for visualization purposes)
+
+First extract some key data for the final presentation to give the audience a feel of the data set and what it holds.
+Extract the following:
+* Count of all available movies
+* MIN, MAX and AVERAGE of the following
+&emsp;&emsp;- year of release
+&emsp;&emsp;- Rental duration
+&emsp;&emsp;- Rental rate
+&emsp;&emsp;- Movie length in minutes
+&emsp;&emsp;- replacement costs
+
 
 ## Final presentation
 Final presentation please see here [Rockbuster Data Analysis](</Rockbuster Data Analysis.pdf>)<br />
