@@ -23,8 +23,8 @@ Which movies contributed the most/least to revenue gain?
 # 3. Data understanding
 
 ## Data set
-The rational database used for this projects contains 15 tables which are connected to eachother over a private key and/or foreign key.
-This data set contains information about Rockbuster' film inventory, customers, payments and more.
+The rational database used for this project contains 15 tables which are connected to eachother over a private key and/or foreign key.
+This data set contains information about Rockbusters' film inventory, customers, payments and more.
 [Rockbuster data set](</dvdrental.zip>)
 
 ## Data structure
@@ -33,7 +33,8 @@ These dimension tables are connected to sub dimension tables like "film_actor","
 For a more detailed perspective please see below the ERD (Entity Relationship Diagram) which was extracted with Postgres pgAdmin.
 ![Rockbuster ERD](</02 Data/ERD Rockbuster.png>)
 
-With the data dictionary all data types, tables and their relationship to eachother can be identified. [Rockbuster data dictionary](</05 Sent to client/Rockbuster Data Dictionary.pdf>)
+With the data dictionary all data types, tables and their relationship to eachother can be identified.</br >
+[Rockbuster data dictionary](</05 Sent to client/Rockbuster Data Dictionary.pdf>)
 
 ## Tools
 For this project the following tools were used
@@ -88,7 +89,8 @@ Where (customer_id,
 ```
 No missing data was found.
 
-## Extract data to answer business questions
+# 5. Analysis
+
 ## Descriptive Analysis
 
 First extract some key data for the final presentation to give the audience a feel of the data set and what it holds.
@@ -138,7 +140,8 @@ FROM film;
 ```
 Most common language_id is 1 which stands for English language. And most common rating is PG-13.
 
-### Join tables examples
+### Join examples
+
 Extract data about the movies which produce the most revenue
 ```SQL
 --extract movies with the most revenue by join rental, inventory and film and sum the amount
