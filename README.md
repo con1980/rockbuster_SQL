@@ -140,7 +140,7 @@ FROM film;
 ```
 Most common language_id is 1 which stands for English language. And most common rating is PG-13.
 
-### Join examples
+## Join examples
 
 Extract data about the movies which produce the most revenue
 ```SQL
@@ -214,7 +214,7 @@ LIMIT 5
 ```
 ![Top 5 customers of top 10 countries](</06 Screenshots/top5_customers_of_top10_countries.png>)</br >
 
-### Subqueries examples
+## Subqueries examples
 Find the average amount paid by the top 5 customers
 ```SQL
 SELECT AVG(total_amount_paid) AS average_amount_paid
@@ -258,7 +258,7 @@ LIMIT 5) AS total_amount_paid
 ```
 The average amoint paid by the TOP 5 customers is 105.55
 
-### CTE examples
+## CTE examples
 
 Find out how many of the top 5 customers are based within of the TOP 10 countries
 ```SQL
