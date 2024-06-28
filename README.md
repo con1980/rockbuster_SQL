@@ -62,7 +62,7 @@ HAVING COUNT(*)>1
 ```
 No duplicated data was found.
 
-### Find missing data
+### Find missing data in "customer" table
 ```SQL
 SELECT customer_id,
 		store_id,
