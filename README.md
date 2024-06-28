@@ -319,12 +319,15 @@ LIMIT 10
 ```
 ![how many top 5 customers in top 10 countries](</06 Screenshots/how_many_top5_customers_from_top10_countries.png>)
 
+## 6. Visualization
+To answer the business questions at hand visualizations and explanations are presented below.
 
-
-
-
-
-## Final presentation
-Final presentation please see here [Rockbuster Data Analysis](</Rockbuster Data Analysis.pdf>)</br >
+![key data overview](</06 Screenshots/key data overview.png>)
+![key data overview](</06 Screenshots/movies revenue.png>)
+![key data overview](</06 Screenshots/Top 10 countries.png>)
+![key data overview](</06 Screenshots/Geographical variation.png>)
 Visualizations made with Tableau please see here [Tableau visualisations](https://public.tableau.com/app/profile/constantin.melachrinos/viz/Rockbuster_17157995150910/Customerscountry?publish=yes)
+Full presentation please see here [Rockbuster Data Analysis](</Rockbuster Data Analysis.pdf>)</br >
+
+## 7. Conclusion and recommendations
 
